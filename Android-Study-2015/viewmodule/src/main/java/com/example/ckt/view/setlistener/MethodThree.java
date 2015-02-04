@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.ckt.view.keyevent.R;
+
 /**
  * Created by ckt on 2/3/15.
  * set class implements listener

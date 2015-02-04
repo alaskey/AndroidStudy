@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.ckt.view.setlistener.R;
+import com.example.ckt.view.keyevent.R;
 
 
 public class MainActivity extends Activity {

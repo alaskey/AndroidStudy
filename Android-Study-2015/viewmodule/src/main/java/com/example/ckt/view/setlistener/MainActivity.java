@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.ckt.view.keyevent.R;
+
 
 /**
  * Created by ckt on 2/3/15.

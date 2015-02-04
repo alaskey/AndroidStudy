@@ -1,0 +1,5 @@
+<root>
+    <item name='android.os.Environment DIRECTORY_PICTURES'>
+        <annotation name='java.lang.annotation.Deprecated' />
+    </item>
+</root>
