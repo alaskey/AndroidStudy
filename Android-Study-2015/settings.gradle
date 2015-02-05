@@ -1,1 +1,1 @@
-include ':app', ':viewmodule', ':cameraskymodule'
+include ':app', ':viewmodule', ':cameraskymodule', ':hello'
