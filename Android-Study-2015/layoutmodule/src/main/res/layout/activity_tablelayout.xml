@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow android:background="@android:color/holo_green_light">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="one col" />
+
+        <TextView
+            android:layout_weight="1"
+            android:background="@android:color/holo_orange_light"
+            android:text="two col" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:text="one col" />
+    </TableRow>
+
+    <TableRow android:background="@android:color/holo_green_light">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="three col" />
+    </TableRow>
+</TableLayout>
