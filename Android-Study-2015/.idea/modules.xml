@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cameraskymodule/cameraskymodule.iml" filepath="$PROJECT_DIR$/cameraskymodule/cameraskymodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/hello/hello.iml" filepath="$PROJECT_DIR$/hello/hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/layoutmodule/layoutmodule.iml" filepath="$PROJECT_DIR$/layoutmodule/layoutmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/layoutmoduleaaa/linearlayoutaaa.iml" filepath="$PROJECT_DIR$/layoutmoduleaaa/linearlayoutaaa.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewmodule/viewmodule.iml" filepath="$PROJECT_DIR$/viewmodule/viewmodule.iml" />
     </modules>
   </component>
