@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.sky.camera.byintent.R;
+import com.sky.camera.one.R;
+
 
 /**
  * Created by ckt on 2/6/15.

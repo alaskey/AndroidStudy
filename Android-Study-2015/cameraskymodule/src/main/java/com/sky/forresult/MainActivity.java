@@ -8,7 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.sky.camera.byintent.R;
+import com.sky.camera.one.R;
+
 
 /**
  * Created by ckt on 2/6/15.
