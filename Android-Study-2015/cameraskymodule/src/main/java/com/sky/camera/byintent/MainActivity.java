@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-import com.sky.camera.one.R;
+import com.sky.camera.video.R;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

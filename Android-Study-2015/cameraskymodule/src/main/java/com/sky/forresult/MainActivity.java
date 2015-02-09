@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.sky.camera.one.R;
+import com.sky.camera.video.R;
 
 
 /**

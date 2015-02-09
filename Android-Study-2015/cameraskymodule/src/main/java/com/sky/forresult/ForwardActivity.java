@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.sky.camera.one.R;
+import com.sky.camera.video.R;
 
 
 /**
