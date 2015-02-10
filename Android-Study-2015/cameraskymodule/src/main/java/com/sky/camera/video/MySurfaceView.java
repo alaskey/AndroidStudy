@@ -43,12 +43,16 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
 
-        camera.stopPreview();
+        if (null == holder.getSurface() || camera == null) {
+            return ;
+        }
+
         try {
+            camera.stopPreview();
             camera.setPreviewDisplay(holder);
-        } catch (IOException e) {
+            camera.startPreview();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        camera.startPreview();
     }
 }

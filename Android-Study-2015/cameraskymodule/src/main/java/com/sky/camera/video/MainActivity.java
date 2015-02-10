@@ -9,6 +9,7 @@ import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -50,15 +51,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onDestroy() {
         super.onDestroy();
 
-        if (null != recorder) {
-            recorder.release();
-            camera.lock();
-        }
-
-        if (null != camera) {
-            camera.release();
-            camera = null;
-        }
+        releaseMediaRecorder();
+        releaseCamera();
     }
 
     @Override
@@ -71,28 +65,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.btnVideo:
-                Log.d("msgsky","btn begin");
                 if (btnVideo.getText().toString().trim().equals("begin")) {
+                    btnVideo.setText("end");
                     if (prepareVideoRecorder()) {
-                        Log.d("msgsky","has prepare");
                         recorder.start();
-                        btnVideo.setText("end");
                     }
-                } else if(btnVideo.getText().toString().trim().equals("end")) {
-                    Log.d("msgsky","end");
-                    recorder.stop();
-                    releaseMediaRecorder();
-                    camera.unlock();
+                } else if (btnVideo.getText().toString().trim().equals("end")) {
                     btnVideo.setText("begin");
-                } else {
-                    Log.d("msgsky","other");
+                    recorder.stop();
                     releaseMediaRecorder();
                 }
                 break;
             default:
-                recorder.release();
+                releaseMediaRecorder();
+                releaseCamera();
                 break;
         }
     }
@@ -103,7 +92,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
             return null;
         }
 
-        return Camera.open();
+        Camera camera = null;
+
+        try {
+            camera = Camera.open();
+        }catch (Exception e) {
+            e.printStackTrace();
+            Log.v("msgsky","getInstance: camera is null");
+        }
+
+        return camera;
     }
 
 
@@ -116,7 +114,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private File getOutputMediaFile() {
 
-        File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),"oneSky");
+        File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "oneSky");
 
         if (!dir.exists()) {
             if (!dir.mkdir()) {
@@ -133,20 +131,32 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
     private boolean prepareVideoRecorder() {
-        Log.d("msgsky","come in prepare");
+        Log.d("msgsky", "come in prepare");
 
-        recorder = new MediaRecorder();
+        if (null == camera) {
+            camera = getCameraInstance(MainActivity.this);
+        }
+        if (null == recorder) {
+            recorder = new MediaRecorder();
+        }
+        if (null == mySurfaceView) {
+            mySurfaceView = new MySurfaceView(MainActivity.this, camera);
+
+            flPreview.addView(mySurfaceView);
+        }
 
         // 1. unlock camera
-        camera.unlock();
-        Log.d("msgsky","unlock");
+        try {
+            camera.unlock();
+        } catch (Exception e) {
+
+        }
+
         // 2. configure MediaRecorder
         recorder.setCamera(camera);
-
         recorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
         recorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
 
-        Log.d("msgsky","quality");
         recorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_720P));
 
         recorder.setOutputFile(getOutputMediaFile().toString());
@@ -159,12 +169,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             releaseMediaRecorder();
             return false;
         }
+        Log.d("msgsky", "finish prepare");
         return true;
     }
 
     private void releaseMediaRecorder() {
 
-        if (null == recorder) {
+        if (null != recorder) {
             recorder.reset();
             recorder.release();
             recorder = null;
@@ -175,9 +186,26 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void releaseCamera() {
 
-        if (null == camera) {
+        if (null != camera) {
             camera.release();
             camera = null;
         }
+    }
+
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
+Log.v("msgsky","back");
+            Log.d("msgsky", "resolve key back");
+            releaseMediaRecorder();
+            releaseCamera();
+            Log.d("msgsky", "resolve key back finish");
+
+            finish();
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 }
