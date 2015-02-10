@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="address">
+        <item>at home</item>
+        <item>at company</item>
+        <item>other</item>
+    </string-array>
+
+    <string-array name="date">
+        <item>birthday</item>
+        <item>memorial day</item>
+        <item>other</item>
+    </string-array>
+</resources>
