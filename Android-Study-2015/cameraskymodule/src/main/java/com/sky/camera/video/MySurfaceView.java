@@ -30,6 +30,8 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
         try {
             camera.setPreviewDisplay(holder);
             camera.startPreview();
+
+            startFaceDetection();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,11 +39,6 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
-    }
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
 
         if (null == holder.getSurface() || camera == null) {
             return ;
@@ -51,8 +48,24 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
             camera.stopPreview();
             camera.setPreviewDisplay(holder);
             camera.startPreview();
+
+            startFaceDetection();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+    }
+
+    private void startFaceDetection() {
+
+        Camera.Parameters params = camera.getParameters();
+
+        if (0 < params.getMaxNumDetectedFaces()) {
+
+            camera.startFaceDetection();
         }
     }
 }

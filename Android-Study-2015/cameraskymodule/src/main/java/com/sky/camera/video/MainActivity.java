@@ -3,6 +3,7 @@ package com.sky.camera.video;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Rect;
 import android.hardware.Camera;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
@@ -16,7 +17,9 @@ import android.widget.FrameLayout;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by ckt on 2/9/15.
@@ -37,6 +40,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_camera_vedio);
 
         findViews();
+
         camera = getCameraInstance(MainActivity.this);
         recorder = new MediaRecorder();
 
@@ -96,10 +100,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         try {
             camera = Camera.open();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            Log.v("msgsky","getInstance: camera is null");
         }
+
+        setFocusModeAuto(camera);
+
+        setMeteringAreas(camera);
+
+        camera.setFaceDetectionListener(new MyFaceDetectionListener());
 
         return camera;
     }
@@ -131,6 +140,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
     private boolean prepareVideoRecorder() {
+
         Log.d("msgsky", "come in prepare");
 
         if (null == camera) {
@@ -149,7 +159,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         try {
             camera.unlock();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
         // 2. configure MediaRecorder
@@ -158,6 +168,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         recorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
 
         recorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_720P));
+
+        // capture every 10 seconds
+        recorder.setCaptureRate(0.03);
 
         recorder.setOutputFile(getOutputMediaFile().toString());
 
@@ -169,7 +182,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             releaseMediaRecorder();
             return false;
         }
-        Log.d("msgsky", "finish prepare");
         return true;
     }
 
@@ -197,8 +209,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public boolean onKeyUp(int keyCode, KeyEvent event) {
 
         if (KeyEvent.KEYCODE_BACK == keyCode) {
-Log.v("msgsky","back");
-            Log.d("msgsky", "resolve key back");
             releaseMediaRecorder();
             releaseCamera();
             Log.d("msgsky", "resolve key back finish");
@@ -208,4 +218,52 @@ Log.v("msgsky","back");
 
         return super.onKeyDown(keyCode, event);
     }
+
+    private void checkCameraParamters(Camera camera) {
+
+        Camera.Parameters params = camera.getParameters();
+
+        List<String> focusModes = params.getSupportedFocusModes();
+
+        if (focusModes.contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
+            // ...
+        }
+    }
+
+    private static void setFocusModeAuto(Camera camera) {
+
+        Camera.Parameters params = camera.getParameters();
+
+        String focusMode = params.getFocusMode();
+
+        Log.v("msgsky", "focus moded: " + focusMode);
+
+        params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+
+        camera.setParameters(params);
+    }
+
+
+    private static void setMeteringAreas(Camera camera) {
+
+        Camera.Parameters params = camera.getParameters();
+
+        if (0 < params.getMaxNumMeteringAreas()) {
+
+            Log.v("msgsky", "now setting metering area");
+
+            List<Camera.Area> meteringAreas = new ArrayList<Camera.Area>();
+
+            Rect areaRect1 = new Rect(-100, -100, 100, 100);
+            meteringAreas.add(new Camera.Area(areaRect1, 600));
+
+            Rect areaRect2 = new Rect(800, -1000, 1000, -800);
+            meteringAreas.add(new Camera.Area(areaRect2, 400));
+
+            params.setMeteringAreas(meteringAreas);
+            camera.setParameters(params);
+        }
+    }
+
+
 }
