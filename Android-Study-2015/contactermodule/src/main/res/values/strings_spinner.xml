@@ -12,4 +12,10 @@
         <item>memorial day</item>
         <item>other</item>
     </string-array>
+
+    <string-array name="mail">
+        <item>person</item>
+        <item>company</item>
+        <item>other</item>
+    </string-array>
 </resources>

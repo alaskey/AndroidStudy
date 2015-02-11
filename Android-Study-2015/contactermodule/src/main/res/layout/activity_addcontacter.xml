@@ -9,33 +9,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/btnOk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ok" />
 
-        <Button
-            android:id="@+id/btnOk"
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="90dip"
+            android:inputType="textPersonName"
+            android:text="name" />
+
+        <ImageView
+            android:id="@+id/nameRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ok" />
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="20dip"
+            android:src="@drawable/contacter" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="name" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/contacter" />
+            android:layout_marginRight="90dip"
+            android:text="name's spell" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,17 +57,7 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="name's pspell" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginRight="90dip"
             android:text="add company" />
     </LinearLayout>
 
@@ -65,23 +67,23 @@
         android:text="telephone" />
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginRight="90dip"
             android:text="mobile" />
 
         <Spinner
             android:id="@+id/spTel"
-            android:layout_width="wrap_content"
+            android:layout_width="100dip"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></Spinner>
+            android:layout_alignParentRight="true"></Spinner>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="fill_parent"
@@ -89,58 +91,68 @@
         android:text="Email" />
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginRight="90dip"
             android:text="email" />
-    </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spMail"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"></Spinner>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="address" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginRight="90dip"
             android:text="address" />
 
         <Spinner
             android:id="@+id/spAddress"
-            android:layout_width="wrap_content"
+            android:layout_width="100dip"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></Spinner>
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:gravity="right">
+
+        </Spinner>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="special date" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
-        <DatePicker
-            android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></DatePicker>
+            android:layout_marginRight="90dip"
+            android:text="date" />
 
         <Spinner
             android:id="@+id/spDate"
-            android:layout_width="wrap_content"
+            android:layout_width="100dip"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></Spinner>
-    </LinearLayout>
+            android:layout_alignParentRight="true"></Spinner>
+    </RelativeLayout>
 
 </LinearLayout>

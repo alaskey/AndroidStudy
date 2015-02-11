@@ -2,10 +2,12 @@ package com.example.ckt.contactermodule;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -19,8 +21,9 @@ public class AddContacterActivity extends Activity implements View.OnClickListen
     private Spinner spTel;
     private Spinner spAddress;
     private Spinner spDate;
+    private Spinner spMail;
 
-    private Button btnOk;
+    private ImageButton btnOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +43,9 @@ public class AddContacterActivity extends Activity implements View.OnClickListen
         spTel = (Spinner) findViewById(R.id.spTel);
         spAddress = (Spinner) findViewById(R.id.spAddress);
         spDate = (Spinner) findViewById(R.id.spDate);
+        spMail = (Spinner) findViewById(R.id.spMail);
 
-        btnOk = (Button) findViewById(R.id.btnOk);
+        btnOk = (ImageButton) findViewById(R.id.btnOk);
     }
 
     private void initUI() {
@@ -60,7 +64,6 @@ public class AddContacterActivity extends Activity implements View.OnClickListen
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
             }
 
             @Override
@@ -89,6 +92,29 @@ public class AddContacterActivity extends Activity implements View.OnClickListen
         String [] date = getResources().getStringArray(R.array.date);
         ArrayAdapter<String> dateAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,date);
         spDate.setAdapter(dateAdapter);
+
+
+        // mail
+        String [] mail = getResources().getStringArray(R.array.mail);
+
+        ArrayAdapter<String> mailAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,mail);
+
+        spMail.setAdapter(mailAdapter);
+
+        spMail.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                Log.d("msgsky",String.valueOf(position));
+                Log.d("msgsky",parent.getItemAtPosition(position).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     @Override
