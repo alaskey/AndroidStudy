@@ -21,6 +21,8 @@
         <activity android:name="com.example.ckt.layoutmodule.AbsoluteActivity"/>
         <activity android:name="com.example.ckt.layoutmodule.RelativeLayoutActivity"/>
         <activity android:name="com.example.ckt.layoutmodule.TableLayoutActivity"/>
+        <activity android:name="com.example.ckt.dynamic.MainActivity"/>
+        <activity android:name="com.example.ckt.scrollview.MainActivity"/>
     </application>
 
 </manifest>

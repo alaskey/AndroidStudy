@@ -1,34 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnLinearLayout"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="linear layout"/>
+        android:text="layout" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnLinearLayout"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="linear layout" />
+
+        <Button
+            android:id="@+id/btnFrameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="frame layout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAbsoluteLayout"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="absolute" />
+
+        <Button
+            android:id="@+id/btnRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="relative" />
+
+
+        <Button
+            android:id="@+id/btnTableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="table" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scroll view" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAddDynamic"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add dynamic" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scroll view" />
 
     <Button
-        android:id="@+id/btnFrameLayout"
+        android:id="@+id/btnScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="frame layout"/>
+        android:text="scroll view" />
 
-    <Button
-        android:id="@+id/btnAbsoluteLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="absolute layout"/>
-    <Button
-        android:id="@+id/btnRelativeLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="relative layout"/>
-    <Button
-        android:id="@+id/btnTableLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="table layout"/>
 
 </LinearLayout>

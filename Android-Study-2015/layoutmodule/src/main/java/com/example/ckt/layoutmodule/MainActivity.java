@@ -16,6 +16,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button btnAbsoluteLayout;
     private Button btnRelativeLayout;
     private Button btnTableLayout;
+    private Button btnDynamic;
+    private Button btnScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnAbsoluteLayout.setOnClickListener(this);
         btnRelativeLayout.setOnClickListener(this);
         btnTableLayout.setOnClickListener(this);
+        btnDynamic.setOnClickListener(this);
+        btnScrollView.setOnClickListener(this);
     }
 
 
@@ -61,6 +65,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnAbsoluteLayout = (Button) findViewById(R.id.btnAbsoluteLayout);
         btnRelativeLayout = (Button) findViewById(R.id.btnRelativeLayout);
         btnTableLayout = (Button) findViewById(R.id.btnTableLayout);
+        btnDynamic = (Button) findViewById(R.id.btnAddDynamic);
+        btnScrollView = (Button) findViewById(R.id.btnScrollView);
     }
 
 
@@ -92,6 +98,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 intent = new Intent(MainActivity.this, TableLayoutActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btnAddDynamic:
+                intent = new Intent(MainActivity.this,com.example.ckt.dynamic.MainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnScrollView:
+                intent = new Intent(MainActivity.this, com.example.ckt.scrollview.MainActivity.class);
+                startActivity(intent);
         }
     }
 }
