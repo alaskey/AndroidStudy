@@ -7,21 +7,15 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btnService"
+        android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="service"/>
-
-
-    <Button
-        android:id="@+id/btnHandler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="handler"/>
+        android:text="start"/>
 
     <Button
-        android:id="@+id/btnBinder"
+        android:id="@+id/btnEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="binder"/>
+        android:text="end"/>
+
 </LinearLayout>

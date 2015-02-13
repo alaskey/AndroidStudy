@@ -20,12 +20,11 @@ import com.sky.service.ServiceDemo;
  */
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private static final String TAG = "SKY";
+    private final String TAG = "SKY";
 
-    private Button btnbind;
-    private Button btnStart;
-
-    private ServiceConnection conn;
+    private Button btnService;
+    private Button btnHandler;
+    private Button btnBinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,47 +34,35 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         findViews();
 
-        btnbind.setOnClickListener(this);
-        btnStart.setOnClickListener(this);
-
-        conn = new ServiceConnection() {
-            @Override
-            public void onServiceConnected(ComponentName name, IBinder service) {
-                Log.v("TAG", "on service connected");
-            }
-
-            @Override
-            public void onServiceDisconnected(ComponentName name) {
-                Log.v(TAG, "on service disconnected");
-            }
-        };
+        btnService.setOnClickListener(this);
+        btnHandler.setOnClickListener(this);
+        btnBinder.setOnClickListener(this);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.v(TAG, "activity on destroy");
-    }
 
     private void findViews() {
 
-        btnbind = (Button) findViewById(R.id.btnBind);
-        btnStart = (Button) findViewById(R.id.btnStart);
+        btnService = (Button) findViewById(R.id.btnService);
+        btnHandler = (Button) findViewById(R.id.btnHandler);
+        btnBinder = (Button) findViewById(R.id.btnBinder);
     }
+
 
     @Override
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
-            case R.id.btnBind:
-                intent = new Intent(MainActivity.this, ServiceDemo.class);
-                bindService(intent, conn, BIND_AUTO_CREATE);
-                unbindService(conn);
+            case R.id.btnService:
+                intent = new Intent(MainActivity.this, com.sky.service.MainActivity.class);
+                startActivity(intent);
                 break;
-            case R.id.btnStart:
-                intent = new Intent(MainActivity.this, ServiceDemo.class);
-                startService(intent);
-//                stopService(intent);
+            case R.id.btnHandler:
+                intent = new Intent(MainActivity.this, com.sky.handler.MainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnBinder:
+                intent = new Intent(MainActivity.this, com.sky.binder.MainActivity.class);
+                startActivity(intent);
                 break;
         }
     }
