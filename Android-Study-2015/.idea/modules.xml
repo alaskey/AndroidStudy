@@ -3,11 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-Study-2015.iml" filepath="$PROJECT_DIR$/Android-Study-2015.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameramyself/cameramyself.iml" filepath="$PROJECT_DIR$/cameramyself/cameramyself.iml" />
       <module fileurl="file://$PROJECT_DIR$/cameraskymodule/cameraskymodule.iml" filepath="$PROJECT_DIR$/cameraskymodule/cameraskymodule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/contactmodule/contactmodule.iml" filepath="$PROJECT_DIR$/contactmodule/contactmodule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hello/hello.iml" filepath="$PROJECT_DIR$/hello/hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contactermodule/contactermodule.iml" filepath="$PROJECT_DIR$/contactermodule/contactermodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/layoutmodule/layoutmodule.iml" filepath="$PROJECT_DIR$/layoutmodule/layoutmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servicemodule/servicemodule.iml" filepath="$PROJECT_DIR$/servicemodule/servicemodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewmodule/viewmodule.iml" filepath="$PROJECT_DIR$/viewmodule/viewmodule.iml" />
     </modules>
   </component>

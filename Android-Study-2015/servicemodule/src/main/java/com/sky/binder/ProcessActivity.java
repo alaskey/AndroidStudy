@@ -42,7 +42,7 @@ public class ProcessActivity extends Activity {
 
                 Message msg = new Message();
 
-                msg.what = ProcessService.MSG
+                msg.what = ProcessService.MSG_SAYHELLO;
             }
 
             @Override

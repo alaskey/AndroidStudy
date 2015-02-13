@@ -9,11 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cameramyself" />
             <option value="$PROJECT_DIR$/cameraskymodule" />
-            <option value="$PROJECT_DIR$/contactmodule" />
-            <option value="$PROJECT_DIR$/hello" />
+            <option value="$PROJECT_DIR$/contactermodule" />
             <option value="$PROJECT_DIR$/layoutmodule" />
+            <option value="$PROJECT_DIR$/servicemodule" />
             <option value="$PROJECT_DIR$/viewmodule" />
           </set>
         </option>

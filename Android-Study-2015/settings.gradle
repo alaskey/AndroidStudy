@@ -1,1 +1,1 @@
-include ':app', ':viewmodule', ':cameraskymodule', ':hello', ':layoutmodule', ':contactmodule'
+include  ':viewmodule', ':cameraskymodule',  ':layoutmodule',  ':cameramyself', ':contactermodule', ':servicemodule'
