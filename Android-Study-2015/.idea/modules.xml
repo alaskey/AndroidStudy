@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/contactermodule/contactermodule.iml" filepath="$PROJECT_DIR$/contactermodule/contactermodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/layoutmodule/layoutmodule.iml" filepath="$PROJECT_DIR$/layoutmodule/layoutmodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/servicemodule/servicemodule.iml" filepath="$PROJECT_DIR$/servicemodule/servicemodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/travel/travel.iml" filepath="$PROJECT_DIR$/travel/travel.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewmodule/viewmodule.iml" filepath="$PROJECT_DIR$/viewmodule/viewmodule.iml" />
     </modules>
   </component>

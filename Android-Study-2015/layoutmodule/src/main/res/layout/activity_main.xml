@@ -72,13 +72,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="scroll view" />
+        android:text="view" />
 
-    <Button
-        android:id="@+id/btnScrollView"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="scroll view" />
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/btnScrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scroll view" />
+
+        <Button
+            android:id="@+id/btnFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fragment" />
+    </LinearLayout>
 
 </LinearLayout>

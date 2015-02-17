@@ -1,1 +1,1 @@
-include  ':viewmodule', ':cameraskymodule',  ':layoutmodule',  ':cameramyself', ':contactermodule', ':servicemodule'
+include  ':viewmodule', ':cameraskymodule',  ':layoutmodule',  ':cameramyself', ':contactermodule', ':servicemodule',':travel'

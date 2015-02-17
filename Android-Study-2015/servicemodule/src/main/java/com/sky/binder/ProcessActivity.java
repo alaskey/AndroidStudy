@@ -49,7 +49,7 @@ public class ProcessActivity extends Activity {
             public void onServiceDisconnected(ComponentName name) {
 
             }
-        }
+        };
     }
 
 

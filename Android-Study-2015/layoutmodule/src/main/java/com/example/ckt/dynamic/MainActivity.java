@@ -50,24 +50,24 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     @Override
-public void onClick(View v) {
-    switch (v.getId()) {
-case R.id.btnAddButton:
-    TextView tv = new TextView(this);
-    tv.setText(String.valueOf(i++));
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnAddButton:
+                TextView tv = new TextView(this);
+                tv.setText(String.valueOf(i++));
 
-    lyMy.addView(tv);
-    break;
+                lyMy.addView(tv);
+                break;
+        }
     }
-}
 
-private void initUI() {
+    private void initUI() {
 
-    lyMy.setOrientation(LinearLayout.VERTICAL);
+        lyMy.setOrientation(LinearLayout.VERTICAL);
 
-    LinearLayout.LayoutParams lyMyParams
-            = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams lyMyParams
+                = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-    lyDynamic.addView(lyMy,lyMyParams);
-}
+        lyDynamic.addView(lyMy, lyMyParams);
+    }
 }

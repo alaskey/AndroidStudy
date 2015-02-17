@@ -23,6 +23,8 @@
         <activity android:name="com.example.ckt.layoutmodule.TableLayoutActivity"/>
         <activity android:name="com.example.ckt.dynamic.MainActivity"/>
         <activity android:name="com.example.ckt.scrollview.MainActivity"/>
+        <activity android:name="com.example.ckt.fragment.MainActivity"/>
+
     </application>
 
 </manifest>

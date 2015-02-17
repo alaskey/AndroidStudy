@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.ckt.fragment.MyFragment;
+
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -18,6 +20,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button btnTableLayout;
     private Button btnDynamic;
     private Button btnScrollView;
+    private Button btnFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnTableLayout.setOnClickListener(this);
         btnDynamic.setOnClickListener(this);
         btnScrollView.setOnClickListener(this);
+        btnFragment.setOnClickListener(this);
     }
 
 
@@ -67,6 +71,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnTableLayout = (Button) findViewById(R.id.btnTableLayout);
         btnDynamic = (Button) findViewById(R.id.btnAddDynamic);
         btnScrollView = (Button) findViewById(R.id.btnScrollView);
+        btnFragment = (Button) findViewById(R.id.btnFragment);
     }
 
 
@@ -104,6 +109,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btnScrollView:
                 intent = new Intent(MainActivity.this, com.example.ckt.scrollview.MainActivity.class);
+                startActivity(intent);
+            case R.id.btnFragment:
+                intent = new Intent(MainActivity.this, com.example.ckt.fragment.MainActivity.class);
                 startActivity(intent);
         }
     }
